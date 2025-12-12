@@ -1,7 +1,19 @@
+import { Routes, Route } from 'react-router-dom';
+import Layout from './Layout';
+import Home from './component/Home';
+import Owner from './component/Owner';
+
 export default function App() {
   return (
-    <div className="min-h-screen flex justify-center bg-blue-950">
-      Hello
-    </div>
+    <Routes>
+
+      <Route path="/" element={<Layout />}>
+
+        <Route index element={<Home />} />
+
+        <Route path="owner" element={<Owner />} />
+
+      </Route>
+    </Routes>
   );
 }
